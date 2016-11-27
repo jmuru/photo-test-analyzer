@@ -32,29 +32,39 @@
                                     <action selector="activateCmera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xx3-AH-F7V"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F5Y-zR-szr">
-                                <rect key="frame" x="67" y="124" width="240" height="309"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Analyzer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxm-Qh-Vth">
                                 <rect key="frame" x="129" y="44" width="116" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhJ-2I-sSX">
+                                <rect key="frame" x="143" y="580" width="89" height="30"/>
+                                <state key="normal" title="Open Library"/>
+                                <connections>
+                                    <action selector="activatePhotoLib:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zHh-iA-wJ1"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c1K-nE-i40">
+                                <rect key="frame" x="16" y="103" width="343" height="400"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bxm-Qh-Vth" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="24" id="06K-PW-aVL"/>
+                            <constraint firstItem="c1K-nE-i40" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="83" id="8Eg-fs-5Jo"/>
                             <constraint firstItem="fQK-3U-nu2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="506" id="D9g-iI-DVO"/>
-                            <constraint firstItem="F5Y-zR-szr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="104" id="Km7-rO-j9d"/>
                             <constraint firstItem="fQK-3U-nu2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O1B-TI-F73"/>
-                            <constraint firstItem="F5Y-zR-szr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="arE-wW-szb"/>
+                            <constraint firstItem="dhJ-2I-sSX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PsT-rH-W5y"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bxm-Qh-Vth" secondAttribute="bottom" constant="602" id="iak-RV-zAm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="c1K-nE-i40" secondAttribute="bottom" constant="164" id="izz-Lf-qlO"/>
+                            <constraint firstItem="dhJ-2I-sSX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="560" id="kVA-78-BEv"/>
+                            <constraint firstItem="c1K-nE-i40" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lHQ-De-7lI"/>
                             <constraint firstItem="bxm-Qh-Vth" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yRm-dy-xL2"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageContainer" destination="F5Y-zR-szr" id="yqa-ih-hft"/>
+                        <outlet property="imageView" destination="c1K-nE-i40" id="xDb-y9-nFi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

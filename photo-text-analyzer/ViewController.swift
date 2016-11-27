@@ -17,17 +17,37 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
 
-    @IBOutlet weak var imageContainer: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
 
     @IBAction func activateCmera(_ sender: Any) {
         //check if camera is available on device
-        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
-            let imagePicker = UIImagePickerController();
-            imagePicker.delegate = self;
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
-            imagePicker.allowsEditing = false;
+        if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
         }
+    }
+    
+
+    @IBAction func activatePhotoLib(_ sender: Any) {
+        if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary)) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        self.imageView.contentMode = .scaleAspectFit
+        self.imageView.image = image
+    }
+    
+        picker.dismiss(animated: true, completion: nil);
     }
 
     override func didReceiveMemoryWarning() {
